@@ -1,3 +1,14 @@
 #root {
   min-height: 100vh;
+  padding: var(--spacing-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Section */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
 }

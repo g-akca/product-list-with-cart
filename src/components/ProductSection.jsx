@@ -1,4 +1,5 @@
 import ProductList from "./ProductList";
+import "./ProductSection.css";
 
 function ProductSection() {
   return (

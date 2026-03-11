@@ -1,0 +1,12 @@
+.product-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+
+.product-section h1 {
+    color: var(--rose-900);
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 120%;
+}
