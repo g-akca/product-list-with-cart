@@ -1,22 +1,37 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --red: #C73B0F;
+
+  --rose-900: #260F08;
+  --rose-500: #87635A;
+  --rose-400: #AD8A85;
+  --rose-300: #CAAFA7;
+  --rose-100: #F5EEEC;
+  --rose-50: #FCF8F6;
+
+  --green: #1EA575;
+
+  --black: #000000;
+  --white: #FFFFFF;
+
+  --spacing-50: 4px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-1100: 88px;
+
+  font-family: "Red Hat Text", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 100%;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--rose-50);
 }
 
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
