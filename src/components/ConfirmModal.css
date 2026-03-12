@@ -20,6 +20,16 @@
   flex-direction: column;
   gap: var(--spacing-400);
   overflow-y: auto;
+  animation: modalSlideUp 300ms ease;
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .modal-heading img {
@@ -83,6 +93,18 @@
     max-width: 700px;
     border-radius: 12px;
     padding: var(--spacing-500);
+    animation: modalScale 250ms ease;
+  }
+
+  @keyframes modalScale {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
