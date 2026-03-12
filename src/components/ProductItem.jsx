@@ -1,11 +1,14 @@
-import productImg from "/assets/images/image-waffle-mobile.jpg";
 import addToCartIcon from "/assets/images/icon-add-to-cart.svg";
 import "./ProductItem.css";
 
-function ProductItem() {
+function ProductItem({ image, name, category, price }) {
   return (
     <section className="product-item">
-      <img src={productImg} className="product-img" />
+      <picture className="product-img">
+        <source media="(min-width: 1440px)" srcSet={image.desktop} />
+        <source media="(min-width: 768px)" srcSet={image.tablet} />
+        <img src={image.mobile} alt={name} />
+      </picture>
 
       <button type="button" className="add-to-cart-btn">
         <img src={addToCartIcon} />
@@ -13,9 +16,9 @@ function ProductItem() {
       </button>
 
       <div className="product-details">
-        <p className="category">Waffle</p>
-        <h3 className="name">Waffle with Berries</h3>
-        <p className="price">$6.50</p>
+        <p className="category">{category}</p>
+        <h3 className="name">{name}</h3>
+        <p className="price">${price.toFixed(2)}</p>
       </div>
     </section>
   )
