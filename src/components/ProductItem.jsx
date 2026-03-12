@@ -1,7 +1,7 @@
 import addToCartIcon from "/assets/images/icon-add-to-cart.svg";
 import "./ProductItem.css";
 
-function ProductItem({ image, name, category, price }) {
+function ProductItem({ image, name, category, price, quantity, addToCart, removeFromCart }) {
   return (
     <section className="product-item">
       <picture className="product-img">
@@ -10,10 +10,18 @@ function ProductItem({ image, name, category, price }) {
         <img src={image.mobile} alt={name} />
       </picture>
 
-      <button type="button" className="add-to-cart-btn">
-        <img src={addToCartIcon} />
-        <p>Add to Cart</p>
-      </button>
+      {quantity === 0 ? (
+        <button type="button" className="add-to-cart-btn" onClick={addToCart}>
+          <img src={addToCartIcon} />
+          <p>Add to Cart</p>
+        </button>
+      ) : (
+        <div className="cart-controls">
+          <button type="button" onClick={removeFromCart}>-</button>
+          <span>{quantity}</span>
+          <button type="button" onClick={addToCart}>+</button>
+        </div>
+      )}
 
       <div className="product-details">
         <p className="category">{category}</p>

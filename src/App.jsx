@@ -1,12 +1,54 @@
+import { useState } from "react";
 import ProductSection from './components/ProductSection';
 import CartSection from "./components/CartSection";
 import './App.css';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart(prevCart => {
+      if (prevCart.find(item => item.name === product.name)) {
+        return prevCart.map(item => 
+          item.name === product.name
+          ? {...item, quantity: item.quantity + 1}
+          : item
+        );
+      }
+
+      return [...prevCart, {...product, quantity: 1}];
+    });
+  }
+  
+  const removeFromCart = (name) => {
+    setCart(prevCart => {
+      const prevProduct = prevCart.find(item => item.name === name);
+
+      if (prevProduct) {
+        if (prevProduct.quantity > 1) {
+          return prevCart.map(item =>
+            item.name === name
+            ? {...item, quantity: item.quantity - 1}
+            : item
+          );
+        }
+        
+        return prevCart.filter(item => item.name !== name);
+      }
+
+      return prevCart;
+    });
+  }
+
   return (
     <main>
-      <ProductSection />
-      <CartSection />
+      <ProductSection
+        cart={cart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+      />
+
+      <CartSection cart={cart} />
     </main>
   )
 }
