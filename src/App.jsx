@@ -1,10 +1,12 @@
 import { useState } from "react";
 import ProductSection from './components/ProductSection';
 import CartSection from "./components/CartSection";
+import ConfirmModal from "./components/ConfirmModal";
 import './App.css';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const addToCart = (product) => {
     setCart(prevCart => {
@@ -51,7 +53,15 @@ function App() {
       <CartSection
         cart={cart}
         removeFromCart={removeFromCart}
+        openModal={() => setIsModalOpen(true)}
       />
+
+      {isModalOpen && (
+        <ConfirmModal
+          cart={cart}
+          closeModal={() => setIsModalOpen(false)}
+        />
+      )}
     </main>
   )
 }

@@ -3,7 +3,7 @@ import carbonNeutralIcon from "/assets/images/icon-carbon-neutral.svg";
 import CartItem from "./CartItem";
 import "./CartSection.css";
 
-function CartSection({ cart, removeFromCart }) {
+function CartSection({ cart, removeFromCart, openModal }) {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
@@ -38,7 +38,7 @@ function CartSection({ cart, removeFromCart }) {
             <p>This is a <span>carbon-neutral</span> delivery</p>
           </div>
 
-          <button type="button" className="confirm-btn">Confirm Order</button>
+          <button type="button" className="confirm-btn" onClick={openModal}>Confirm Order</button>
         </div>
       )}
     </section>
