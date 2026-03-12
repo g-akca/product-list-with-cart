@@ -37,7 +37,7 @@
   gap: var(--spacing-300);
 }
 
-.cart-filled .total-div {
+.total-div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +45,7 @@
   color: var(--rose-900);
 }
 
-.cart-filled .total-div .total {
+.total-div .total {
   font-size: 24px;
   font-weight: bold;
 }
