@@ -5,7 +5,7 @@ import "./ProductItem.css";
 
 function ProductItem({ image, name, category, price, quantity, addToCart, removeFromCart }) {
   return (
-    <section className="product-item">
+    <section className={`product-item ${quantity > 0 ? "in-cart" : ""}`}>
       <picture className="product-img">
         <source media="(min-width: 1440px)" srcSet={image.desktop} />
         <source media="(min-width: 768px)" srcSet={image.tablet} />
