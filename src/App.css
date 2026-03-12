@@ -9,6 +9,7 @@
 /* Main Section */
 main {
   width: 100%;
+  max-width: 1216px;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-400);
@@ -18,5 +19,17 @@ main {
 @media screen and (min-width: 768px) {
   #root {
     padding: var(--spacing-500);
+  }
+}
+
+/* Desktop Responsive Styles */
+@media screen and (min-width: 1440px) {
+  #root {
+    padding: var(--spacing-1100) var(--spacing-500);
+  }
+
+  main {
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
