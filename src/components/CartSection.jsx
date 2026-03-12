@@ -18,25 +18,27 @@ function CartSection({ cart, removeFromCart }) {
         </div>
       ) : (
         <div className="cart-filled">
-          {cart.map(item => (
-            <CartItem 
-              key={item.name} 
-              {...item}
-              removeFromCart={() => removeFromCart(item.name, item.quantity)}
-            />
-          ))}
+          <div className="cart-list">
+            {cart.map(item => (
+              <CartItem 
+                key={item.name} 
+                {...item}
+                removeFromCart={() => removeFromCart(item.name, item.quantity)}
+              />
+            ))}
+          </div>
 
           <div className="total-div">
             <p>Order Total</p>
-            <p className="total">{totalPrice}</p>
+            <p className="total">${totalPrice.toFixed(2)}</p>
           </div>
 
           <div className="carbon-neutral">
             <img src={carbonNeutralIcon} />
-            <p>This is a <strong>carbon-neutral</strong> delivery</p>
+            <p>This is a <span>carbon-neutral</span> delivery</p>
           </div>
 
-          <button type="button">Confirm Order</button>
+          <button type="button" className="confirm-btn">Confirm Order</button>
         </div>
       )}
     </section>
