@@ -49,6 +49,12 @@
 
   color: var(--rose-900);
   font-family: inherit;
+  transition: outline-color 0.3s ease, color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  outline-color: var(--red);
+  color: var(--red);
 }
 
 .add-to-cart-btn img {
@@ -72,11 +78,22 @@
   border: 1.6px solid var(--white);
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.control-btn img {
+.control-btn:hover {
+  background-color: var(--white);
+}
+
+.control-btn svg {
   width: 10px;
   height: 10px;
+  fill: var(--white);
+  transition: fill 0.2s ease;
+}
+
+.control-btn:hover svg {
+  fill: var(--red);
 }
 
 .product-details {

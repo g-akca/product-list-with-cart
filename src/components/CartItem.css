@@ -56,9 +56,20 @@
   border: 1.6px solid var(--rose-400);
   border-radius: 50%;
   cursor: pointer;
+  transition: border-color 0.2s ease;
 }
 
-.remove-btn img {
+.remove-btn:hover {
+  border-color: var(--rose-900);
+}
+
+.remove-btn svg {
   width: 8.75px;
   height: 8.75px;
+  fill: var(--rose-400);
+  transition: fill 0.2s ease;
+}
+
+.remove-btn:hover svg {
+  fill: var(--rose-900);
 }

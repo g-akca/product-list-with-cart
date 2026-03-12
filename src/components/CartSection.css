@@ -74,6 +74,11 @@
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #952C0B;
 }
 
 /* Desktop Responsive Styles */
