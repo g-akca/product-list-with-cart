@@ -1,4 +1,6 @@
 import addToCartIcon from "/assets/images/icon-add-to-cart.svg";
+import decrementIcon from "/assets/images/icon-decrement-quantity.svg";
+import incrementIcon from "/assets/images/icon-increment-quantity.svg";
 import "./ProductItem.css";
 
 function ProductItem({ image, name, category, price, quantity, addToCart, removeFromCart }) {
@@ -17,9 +19,13 @@ function ProductItem({ image, name, category, price, quantity, addToCart, remove
         </button>
       ) : (
         <div className="cart-controls">
-          <button type="button" onClick={removeFromCart}>-</button>
+          <button type="button" className="control-btn" onClick={removeFromCart}>
+            <img src={decrementIcon} />
+          </button>
           <span>{quantity}</span>
-          <button type="button" onClick={addToCart}>+</button>
+          <button type="button" className="control-btn" onClick={addToCart}>
+            <img src={incrementIcon} />
+          </button>
         </div>
       )}
 
