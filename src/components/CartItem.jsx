@@ -1,4 +1,5 @@
 import removeItemIcon from "/assets/images/icon-remove-item.svg";
+import "./CartItem.css";
 
 function CartItem({ name, quantity, price, removeFromCart }) {
   return (
@@ -8,8 +9,8 @@ function CartItem({ name, quantity, price, removeFromCart }) {
 
         <div>
           <span className="item-quantity">{quantity}x</span>
-          <span className="item-price">@ {price}</span>
-          <span className="item-total">${price * quantity}</span>
+          <span className="item-price">@ ${price.toFixed(2)}</span>
+          <span className="item-total">${(price * quantity).toFixed(2)}</span>
         </div>
       </div>
 
