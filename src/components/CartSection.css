@@ -13,7 +13,7 @@
   font-weight: bold;
 }
 
-.cart-main {
+.cart-empty {
   padding: var(--spacing-200) 0;
   display: flex;
   flex-direction: column;
@@ -21,12 +21,12 @@
   gap: var(--spacing-200);
 }
 
-.cart-main .empty-cart-img {
+.cart-empty .empty-cart-img {
   width: 128px;
   height: 128px;
 }
 
-.cart-main p {
+.cart-empty p {
   color: var(--rose-500);
   font-weight: 600;
 }
