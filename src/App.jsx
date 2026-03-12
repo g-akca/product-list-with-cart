@@ -42,6 +42,11 @@ function App() {
     });
   }
 
+  function closeModal() {
+    setIsModalOpen(false);
+    setCart([]);
+  }
+
   return (
     <main>
       <ProductSection
@@ -59,7 +64,7 @@ function App() {
       {isModalOpen && (
         <ConfirmModal
           cart={cart}
-          closeModal={() => setIsModalOpen(false)}
+          closeModal={closeModal}
         />
       )}
     </main>

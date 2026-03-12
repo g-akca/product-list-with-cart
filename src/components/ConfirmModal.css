@@ -1,8 +1,17 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .confirm-modal {
   position: fixed;
+  top: auto;
   bottom: 0;
   left: 0;
   width: 100%;
+  max-width: none;
+  margin: 0;
   background-color: var(--white);
   padding: var(--spacing-500) var(--spacing-300) var(--spacing-300);
   border: none;
@@ -38,6 +47,7 @@
 
 .modal-cart .cart-item > div {
   display: flex;
+  align-items: center;
   gap: var(--spacing-200);
   min-width: 0;
 }
