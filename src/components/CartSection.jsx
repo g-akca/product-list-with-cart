@@ -1,9 +1,12 @@
 import emptyCartIcon from "/assets/images/illustration-empty-cart.svg";
 import carbonNeutralIcon from "/assets/images/icon-carbon-neutral.svg";
 import CartItem from "./CartItem";
+import { useCart } from "../context/CartContext";
 import "./CartSection.css";
 
-function CartSection({ cart, removeFromCart, openModal, isModalOpen }) {
+function CartSection({ openModal, isModalOpen }) {
+  const { cart, removeFromCart } = useCart();
+
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 

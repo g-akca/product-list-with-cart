@@ -1,8 +1,11 @@
 import ProductItem from "./ProductItem";
 import data from "../data/data.json";
+import { useCart } from "../context/CartContext";
 import "./ProductList.css";
 
-function ProductList({ cart, addToCart, removeFromCart }) {
+function ProductList() {
+  const { cart, addToCart, removeFromCart } = useCart();
+
   const getQuantity = (name) => {
     const existing = cart.find(item => item.name === name);
     return existing ? existing.quantity : 0;

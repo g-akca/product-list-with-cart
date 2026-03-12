@@ -1,7 +1,10 @@
 import orderConfirmedIcon from "/assets/images/icon-order-confirmed.svg";
+import { useCart } from "../context/CartContext";
 import "./ConfirmModal.css";
 
-function ConfirmModal({ closeModal, cart }) {
+function ConfirmModal({ closeModal }) {
+  const { cart } = useCart();
+
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
   return (
