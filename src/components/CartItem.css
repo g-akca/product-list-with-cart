@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--spacing-100);
 }
 
 .cart-item:first-of-type {
@@ -19,11 +20,15 @@
   flex-direction: column;
   gap: var(--spacing-100);
   font-size: 14px;
+  min-width: 0;
 }
 
 .item-details .item-name {
   color: var(--rose-900);
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-details > div {

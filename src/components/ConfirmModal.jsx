@@ -1,10 +1,11 @@
 import orderConfirmedIcon from "/assets/images/icon-order-confirmed.svg";
+import "./ConfirmModal.css";
 
 function ConfirmModal({ closeModal, cart }) {
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
   return (
-    <div className="confirm-modal">
+    <dialog className="confirm-modal">
       <div className="modal-heading">
         <img src={orderConfirmedIcon} />
         <h2>Order Confirmed</h2>
@@ -14,15 +15,17 @@ function ConfirmModal({ closeModal, cart }) {
       <div className="modal-cart">
         <div>
           {cart.map(item => (
-            <div className="cart-item">
-              <img src={item.image.thumbnail} />
+            <div className="cart-item" key={item.name}>
+              <div>
+                <img src={item.image.thumbnail} />
 
-              <div className="item-details">
-                <p className="item-name">{item.name}</p>
+                <div className="item-details">
+                  <p className="item-name">{item.name}</p>
 
-                <div>
-                  <span className="item-quantity">{item.quantity}x</span>
-                  <span className="item-price">@ ${item.price.toFixed(2)}</span>
+                  <div>
+                    <span className="item-quantity">{item.quantity}x</span>
+                    <span className="item-price">@ ${item.price.toFixed(2)}</span>
+                  </div>
                 </div>
               </div>
 
@@ -37,8 +40,8 @@ function ConfirmModal({ closeModal, cart }) {
         </div>
       </div>
 
-      <button onClick={closeModal}>Start New Order</button>
-    </div>
+      <button type="button" className="confirm-btn" onClick={closeModal}>Confirm Order</button>
+    </dialog>
   )
 }
 
