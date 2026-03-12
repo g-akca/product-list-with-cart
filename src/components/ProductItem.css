@@ -5,7 +5,8 @@
 }
 
 .product-item.in-cart .product-img {
-  border: 2.5px solid var(--red);
+  outline: 3px solid var(--red);
+  outline-offset: -3px;
 }
 
 .product-img {
