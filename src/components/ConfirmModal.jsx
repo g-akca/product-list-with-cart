@@ -6,9 +6,15 @@ function ConfirmModal({ closeModal, cart }) {
 
   return (
     <div className="modal-backdrop" onClick={closeModal}>
-      <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
+      <div 
+        id="confirm-modal" 
+        className="confirm-modal" 
+        role="dialog" 
+        aria-modal="true" 
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="modal-heading">
-          <img src={orderConfirmedIcon} />
+          <img src={orderConfirmedIcon} alt="Green tick icon" />
           <h2>Order Confirmed</h2>
           <p>We hope you enjoy your food!</p>
         </div>
@@ -41,7 +47,13 @@ function ConfirmModal({ closeModal, cart }) {
           </div>
         </div>
 
-        <button type="button" className="confirm-btn" onClick={closeModal}>Start New Order</button>
+        <button 
+          type="button" 
+          className="confirm-btn" 
+          onClick={closeModal}
+        >
+          Start New Order
+        </button>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ function ProductItem({ image, name, category, price, quantity, addToCart, remove
 
       {quantity === 0 ? (
         <button type="button" className="add-to-cart-btn" onClick={addToCart}>
-          <img src={addToCartIcon} />
+          <img src={addToCartIcon} alt="Cart icon" />
           <p>Add to Cart</p>
         </button>
       ) : (

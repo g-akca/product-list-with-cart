@@ -59,6 +59,7 @@ function App() {
         cart={cart}
         removeFromCart={removeFromCart}
         openModal={() => setIsModalOpen(true)}
+        isModalOpen={isModalOpen}
       />
 
       {isModalOpen && (
