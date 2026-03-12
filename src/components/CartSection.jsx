@@ -3,7 +3,7 @@ import carbonNeutralIcon from "/assets/images/icon-carbon-neutral.svg";
 import CartItem from "./CartItem";
 import "./CartSection.css";
 
-function CartSection({ cart }) {
+function CartSection({ cart, removeFromCart }) {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
@@ -19,7 +19,11 @@ function CartSection({ cart }) {
       ) : (
         <div className="cart-filled">
           {cart.map(item => (
-            <CartItem key={item.name} {...item} />
+            <CartItem 
+              key={item.name} 
+              {...item}
+              removeFromCart={() => removeFromCart(item.name, item.quantity)}
+            />
           ))}
 
           <div className="total-div">

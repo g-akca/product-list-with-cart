@@ -1,6 +1,6 @@
 import removeItemIcon from "/assets/images/icon-remove-item.svg";
 
-function CartItem({ name, quantity, price }) {
+function CartItem({ name, quantity, price, removeFromCart }) {
   return (
     <div className="cart-item">
       <div className="item-details">
@@ -13,7 +13,7 @@ function CartItem({ name, quantity, price }) {
         </div>
       </div>
 
-      <button type="button" className="remove-btn">
+      <button type="button" className="remove-btn" onClick={removeFromCart}>
         <img src={removeItemIcon} />
       </button>
     </div>

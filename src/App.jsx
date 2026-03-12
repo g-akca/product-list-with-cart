@@ -20,15 +20,15 @@ function App() {
     });
   }
   
-  const removeFromCart = (name) => {
+  const removeFromCart = (name, amount=1) => {
     setCart(prevCart => {
       const prevProduct = prevCart.find(item => item.name === name);
 
       if (prevProduct) {
-        if (prevProduct.quantity > 1) {
+        if (prevProduct.quantity > amount) {
           return prevCart.map(item =>
             item.name === name
-            ? {...item, quantity: item.quantity - 1}
+            ? {...item, quantity: item.quantity - amount}
             : item
           );
         }
@@ -48,7 +48,10 @@ function App() {
         removeFromCart={removeFromCart}
       />
 
-      <CartSection cart={cart} />
+      <CartSection
+        cart={cart}
+        removeFromCart={removeFromCart}
+      />
     </main>
   )
 }
